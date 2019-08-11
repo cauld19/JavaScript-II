@@ -12,14 +12,23 @@ returnChristian();
 
 // ==== Challenge 2: Create a counter function ====
  // Return a function that when invoked increments and returns a counter variable.
+// const counter = () => {
+//   let count = 0;
+//   return function() {
+//     //count = count + 1;
+//     return ++count;
+//   }
+// };
+
 const counter = () => {
   let count = 0;
-  return function() {
-    //count = count + 1;
-    return ++count;
-  }
-};
+  return () => ++count;
+}
+
 let newCounter = counter();
+newCounter()
+newCounter()
+newCounter()
 console.log(newCounter());
 
 

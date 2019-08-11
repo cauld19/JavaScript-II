@@ -132,26 +132,31 @@ console.log(avDonation);
 
 
 
-let largeDonation = runners.filter(a => a.donation > 100);
+// let largeDonation = runners.filter(a => a.donation > 100);
 
-let largeDonationAvg = largeDonation.reduce((a,b) => a + b.donation / largeDonation.length, 0);
+// let largeDonationAvg = largeDonation.reduce((a,b) => a + b.donation / largeDonation.length, 0);
 
-console.log(largeDonationAvg);
+// console.log(largeDonationAvg);
+
+let largeDonation = runners
+    .filter(a => a.donation > 100)
+    .reduce((a,b) => a + b.donation / 31, 0);
+    console.log(largeDonation);
 
 
 //donation order
 
 
 let donationOrder = [];
-let sortDonation = runners.sort((a,b) => {
-    if(a.donation > b.donation){
-        return -1;
-    } else {
-        return 1;
-    }
-})
+// let sortDonation = runners.sort((a,b) => {
+//     if(a.donation > b.donation){
+//         return -1;
+//     } else {
+//         return 1;
+//     }
+// })
 
-// let sortDonation = runners.sort ((a,b) => a.donation > b.donation ? -1 : 1);
+let sortDonation = runners.sort ((a,b) => a.donation > b.donation ? -1 : 1);
 
 
 

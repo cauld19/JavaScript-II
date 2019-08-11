@@ -86,12 +86,12 @@ console.log(allCaps);
 
 // ==== Challenge 3: Use .filter() ====
 // The large shirts won't be available for the event due to an ordering issue.  Get a list of runners with large sized shirts so they can choose a different size. Return an array named largeShirts that contains information about the runners that have a shirt size of L and log the result
-let largeShirts = [];
+// let largeShirts = [];
 
-let shirtSize = runners.filter ((shirt) => (shirt.shirt_size == "L" || shirt.shirt_size == "XL" || shirt.shirt_size == "2XL" || shirt.shirt_size == "3XL")); 
-largeShirts.push(shirtSize);
+// let shirtSize = runners.filter ((shirt) => (shirt.shirt_size == "L" || shirt.shirt_size == "XL" || shirt.shirt_size == "2XL" || shirt.shirt_size == "3XL")); 
+// largeShirts.push(shirtSize);
         
-console.log(largeShirts);
+// console.log(largeShirts);
 
 
 // ==== Challenge 4: Use .reduce() ====
@@ -130,14 +130,32 @@ console.log(avDonation);
 // Problem 3
 // filter over 100$ donation and reduce to find average
 
-// let largeDonation = runners
-//     .filter(a => a.donation > 100)
-//     .reduce((a,b) => a + b.donation / 31, 0);
+
 
 let largeDonation = runners.filter(a => a.donation > 100);
 
-
 let largeDonationAvg = largeDonation.reduce((a,b) => a + b.donation / largeDonation.length, 0);
 
-
 console.log(largeDonationAvg);
+
+
+//donation order
+
+
+let donationOrder = [];
+let sortDonation = runners.sort((a,b) => {
+    if(a.donation > b.donation){
+        return -1;
+    } else {
+        return 1;
+    }
+})
+
+// let sortDonation = runners.sort ((a,b) => a.donation > b.donation ? -1 : 1);
+
+
+
+donationOrder.push(sortDonation);
+console.log(donationOrder);
+
+

@@ -61,18 +61,26 @@ multiplyNums(5, 6, function(result) {
   console.log(result);
 });
 
-function contains(item, list, cb) {
-  // contains checks if an item is present inside of the given array/list.
-  // Pass true to the callback if it is, otherwise pass false.
-  for (let i = 0; i < list.length; i++) {
-    if(item === list[i]) {
-      return cb(true);
-    } else {
-      cb(false)
-    }
-  } 
-};
+// function contains(item, list, cb) {
+//   // contains checks if an item is present inside of the given array/list.
+//   // Pass true to the callback if it is, otherwise pass false.
+//   for (let i = 0; i < list.length; i++) {
+//     if(item === list[i]) {
+//       return cb(true);
+//     } else {
+//       cb(false)
+//     }
+//   } 
+// };
    
+
+function contains(item, list, cb) {
+  for (let i = 0; i < list.length; i++) {
+    if (item == list[i]) {
+      return cb(true);
+    }
+  }
+}
 
 contains('yo-yo', items, function(answer) {
   console.log(answer);
